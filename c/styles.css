@@ -40,6 +40,7 @@ img.right		{float:right; margin:0 0 .5em 1em;}
 	#content	{-webkit-box-shadow: 5px 5px 5px #888; -moz-box-shadow: 5px 5px 5px #888; box-shadow: 5px 5px 5px #888;}
 #bottom			{display:block; float:none; clear:both;}
 #bottomshadow	{margin-left:5px; height:5px; background:url(../i/shadow_w.png) 0 0 repeat-x;}
+#breadcrumbs	{margin-top:8px;}
 /* Header */
 header			{border-bottom:1px solid #999; overflow:hidden;}
 header h1		{text-align:right; font-size:0.9em; text-transform:uppercase;}
@@ -49,10 +50,10 @@ footer			{padding:1em 0 1em 5px; color:#999; font-size:.9em;}
 /* Nav
 -------------------------------------------------------------------------------------*/
 ul.nav			{list-style:none; padding:0; margin:0;}
-ul.nav li a {display:block; padding:3px 10px;}
+ul.nav li a 	{display:block; padding:3px 10px;}
 /* Main */
 #main_nav		{margin-top:50px;clear:both; float:none; overflow:hidden;}
-#main_nav ul.nav{margin-left:50px;}
+#main_nav ul.nav{margin-left:10px;}
 #main_nav ul.nav li{float:left;}
 #main_nav ul.nav li:first-child a{border-left:1px solid #ccc;}
 #main_nav ul.nav li a{background:#e5e5e5; border:1px solid #ccc; border-bottom-color:#bbb; border-left:0px; text-decoration:none; padding-top:7px;
