@@ -90,8 +90,8 @@ ul.nav.strip li:last-child a 	{padding-right:0px;}
 /* Forms 
 -------------------------------------------------------------------------------------*/
 ol.vert						{font-family:arial, sans-serif; font-size:13px; margin:0; padding:0; list-style: none;}
-ol.vert li					{border-bottom:1px solid #ccc; padding:15px 0; clear:both; float:none; overflow:hidden;}
-ol.vert label 				{width:125px; display:block; float:left; text-align:right; padding:4px 5px 4px 0; color:#555;}
+ol.vert li					{border-bottom:1px solid #ccc; padding:7px 0; clear:both; float:none; overflow:hidden;}
+ol.vert label 				{width:125px; display:block; float:left; text-align:right; padding:4px 5px 4px 0; color:#555; line-height:1;}
 ol.vert input				{display:inline;}
 ol.vert .styled				{border:1px solid #9fba76; padding:4px 1px; font-size:13px;}
 ol.vert div.option			{float:left;}
