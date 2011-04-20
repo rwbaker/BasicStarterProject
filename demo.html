@@ -92,7 +92,9 @@
 		<form>
 			<h2>Form Element</h2>		
 			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
-			<ol class="vert">
+			
+			<p><span id="form-switcher">Switch Form Layout</span></p>
+			<ol id="form_example" class="vert">
 				<li>
 					<label for="text_field">Text Field:</label>
 					<input type="text" id="text_field" />
@@ -252,6 +254,17 @@
 			var d = new Date();
 			var year=document.getElementById("year");
 			year.innerHTML = d.getFullYear();
+			
+			//Switch Form Class
+			document.getElementById('form-switcher').onclick = function() {
+				var frm = document.getElementById("form_example");
+				var style = frm.getAttribute("class");
+				if (style == "vert") {
+					frm.setAttribute("class", "horiz");
+				} else if (style == "horiz") {
+					frm.setAttribute("class", "vert");
+				};
+			};
 		</script>
 	</body>
 </html>
