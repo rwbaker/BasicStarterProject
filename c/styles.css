@@ -18,7 +18,7 @@ body{min-width:960px}.container_12,.container_16{margin-left:auto;margin-right:a
 
 /* Default Styles 
 -------------------------------------------------------------------------------------*/
-body 			{margin:0; font:14px/1.4 Arial, Tahoma, sans-serif; background:#eee;}
+body 			{margin:0; font:14px/1.4 Arial, Tahoma, sans-serif; background:#eee; color:#333;}
 /* Text Styles */
 h1,h2,h3,h4,h4,h5,h6{margin:.6em 0; font-weight:bold;}
 h1				{font-size:1.75em}
@@ -35,7 +35,7 @@ hr				{border-color:#ddd; border-style:solid; border-width:1px 0 0; clear:both; 
 strong			{font-weight: bold;}
 strong.red		{color:#d11d1d;}
 em				{font-style:italic;}
-acronym,abbr	{border-bottom:1px dashed #999; color:#666;}
+acronym,abbr	{border-bottom:1px dashed #999; color:#666; text-transform:uppercase;}
 cite			{border-bottom:1px dashed #999;}
 pre				{white-space:pre-wrap;}
 blockquote		{border-left:3px solid #ccc; padding-left:5px; margin-left:30px;}
@@ -43,6 +43,7 @@ fieldset		{border:1px solid #ccc; background:#fafafa; border-radius:5px; positio
 fieldset legend	{font-weight:bold; padding:0 10px 5px; background:#fff; border:1px solid #ccc; border-top:0px; position:absolute; top:-1px; left:10px;}
 blockquote, table, ol, ul, fieldset {margin-bottom:20px;}
 p				{margin-bottom:1em;}
+small			{font-size:.8em;}
 /* Lists */
 ol.default		{list-style-type:decimal;}
 ul.default		{list-style-type:disc;}
@@ -55,18 +56,19 @@ img.right		{float:right; margin:0 0 .5em 1em;}
 
 /* Basic Frame
 -------------------------------------------------------------------------------------*/
-#wrapper 		{border:1px solid #bbb; background:#fff; z-index:50; -webkit-box-shadow: 5px 5px 5px #888; -moz-box-shadow: 5px 5px 5px #888; box-shadow: 5px 5px 5px #888;}
+#wrapper 		{border:1px solid #bbb; background:#fff; z-index:50; margin-top:-1px; /* pull wrapper under nav */ -webkit-box-shadow: 5px 5px 5px #888; -moz-box-shadow: 5px 5px 5px #888; box-shadow: 5px 5px 5px #888;}
 #content		{padding:10px;}
 #breadcrumbs	{margin-top:8px;}
 /* Header */
 header	h1		{margin-left:10px;}
 section>h1:first-child {font-size:1.2em; text-transform:uppercase; margin-bottom:1em; border-bottom:1px solid #ccc;}
+section			{margin-bottom:2em; overflow:hidden;}
 /* Footer */
 footer ul.nav	{margin-top:10px; font-size:.9em; float:right;}
-#copywrite		{padding:10px 0 1em 5px; color:#999; font-size:.9em;}
+#copyright		{padding:10px 0 1em 5px; color:#999; font-size:.9em;}
 
 /* Nav
-------------------w-------------------------------------------------------------------*/
+--------------------------------------------------------------------------------------*/
 ul.nav			{}
 ul.nav li a 	{display:block; padding:3px 10px;}
 ul.nav.strip li 				{float:left; border-left:1px solid #ccc;}
@@ -74,7 +76,7 @@ ul.nav.strip li:first-child 	{border-left:none;}
 ul.nav.strip li:first-child a 	{padding-left:0px;}
 ul.nav.strip li:last-child a 	{padding-right:0px;}
 /* Main */
-#main_nav					{}
+#main_nav					{z-index:100; /* Set nav block ontop of #wrapper */}
 #main_nav ul.nav			{margin:0 0 0 10px;}
 #main_nav li				{float:left;}
 #main_nav li:first-child a	{border-left:1px solid #ccc;}
@@ -89,29 +91,33 @@ ul.nav.strip li:last-child a 	{padding-right:0px;}
 
 /* Forms 
 -------------------------------------------------------------------------------------*/
-ol.vert						{font-family:arial, sans-serif; font-size:13px; margin:0; padding:0; list-style: none;}
-ol.vert li					{border-bottom:1px solid #ccc; padding:7px 0; clear:both; float:none; overflow:hidden;}
-ol.vert label 				{width:125px; display:block; float:left; text-align:right; padding:4px 5px 4px 0; color:#555; line-height:1;}
-ol.vert input				{display:inline;}
-ol.vert .styled				{border:1px solid #9fba76; padding:4px 1px; font-size:13px;}
-ol.vert div.option			{float:left;}
-ol.vert div.option label	{width:auto; display:inline; float:none; text-align:left; color:#333;}
-ol.vert div.option input 	{margin-left:0;}
-ol.vert li.btn, ol.vert li.indent, ol.vert .feedback
+.vert label, .horiz label	{color:#777}
+
+ol.vert,ul.vert				{margin:0; padding:0; list-style:none;}
+.vert li					{border-bottom:1px solid #ccc; padding:7px 0; clear:both; float:none; overflow:hidden;}
+.vert li label 				{width:125px; display:block; float:left; text-align:right; padding:4px 5px 4px 0; color:#555; line-height:1;}
+.vert li input				{display:inline;}
+.vert li div.option			{float:left;}
+.vert li div.option label	{width:auto; display:inline; float:none; text-align:left; color:#333;}
+.vert li div.option input 	{margin-left:0;}
+.vert li.btn, .vert li.indent, .vert li .feedback
 							{padding-left:131px;}
 ol.vert li span.value 		{float:left; padding:5px 5px 4px 0; font-weight:bold;}
 
-ol.horiz					{}
-ol.horiz li>label			{display:block; font-size:10px; font-family:'ColaborateLightRegular', Arial, sans-serif; text-transform:uppercase; color:#006837;}
-ol.horiz span.option		{color:#333; }
+ol.horiz,ul.horiz			{}
+.horiz li>label				{display:block;}
+.horiz li div.option		{color:#333; /* Resets label colors being used w/ radio/checkboxes */}
 
 /* Messages 
 -------------------------------------------------------------------------------------*/
 .feedback			{clear:both; float:none; display:block;}
+.feedback strong	{color:#000;}
 .feedback div.error	{background:#FEF1EC; border:1px solid #d11d1d; color:#d11d1d;}
+.feedback div.error strong {color:#d11d1d;}
 .feedback .tip 		{background:#fefbe7; border:1px solid #d3af12; color:#555;}
-.feedback .tip strong	{color:#000;}
-.feedback div.error, .feedback .tip
+.feedback .info		{background:#e2eefe; border:1px solid #5080ed; color:#333;}
+.feedback .note		{background:#eee; border:1px dashed #999; color:#333;}
+.feedback div.error, .feedback .tip, .feedback .info, .feedback .note
 					{padding:7px; display:inline-block; border-radius:3px; margin:10px 0;}
 					
 /* Table
